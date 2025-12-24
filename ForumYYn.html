@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fall House Forum | Love Triad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #f4efe6;
+        --accent: #1f1b47;
+        --accent-strong: #b7595c;
+        --muted: #453c5f;
+        --surface: #ffffff;
+        --border: rgba(31, 27, 71, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        background: radial-gradient(circle at top right, rgba(247, 225, 206, 0.8), transparent 45%),
+          radial-gradient(circle at 20% 20%, rgba(181, 89, 92, 0.35), transparent 55%), var(--bg);
+        color: var(--muted);
+        overflow-x: hidden;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-in {
+        opacity: 0;
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+
+      .animate-delay-1 { animation-delay: 0.1s; }
+      .animate-delay-2 { animation-delay: 0.2s; }
+      .animate-delay-3 { animation-delay: 0.3s; }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .page {
+        min-height: 100vh;
+        padding: 0 1.5rem 3rem;
+      }
+
+      header.site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 0;
+        position: sticky;
+        top: 0;
+        background: rgba(244, 239, 230, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 100;
+        transition: all 0.3s ease;
+        border-bottom: 1px solid transparent;
+      }
+
+      header.site-header.scrolled {
+        box-shadow: 0 4px 20px rgba(31, 27, 71, 0.08);
+        border-bottom-color: var(--border);
+      }
+
+      .brand {
+        font-family: "Playfair Display", serif;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-size: 1.2rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .brand:hover {
+        color: var(--accent-strong);
+        transform: scale(1.05);
+      }
+
+      nav ul {
+        display: flex;
+        gap: 1.25rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 500;
+      }
+
+      nav ul li a {
+        position: relative;
+        padding-bottom: 4px;
+      }
+
+      nav ul li a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent-strong);
+        transition: width 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        color: var(--accent-strong);
+      }
+
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .forum-header {
+        text-align: center;
+        padding: 3rem 0 2rem;
+      }
+
+      .forum-header h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        color: var(--accent);
+        margin: 0 0 0.5rem;
+      }
+
+      .forum-header .subtitle {
+        font-size: 1.1rem;
+        color: var(--accent-strong);
+        margin: 0.5rem 0;
+      }
+
+      .forum-header p {
+        max-width: 700px;
+        margin: 1rem auto;
+        line-height: 1.7;
+      }
+
+      .coming-soon-card {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+        border-radius: 24px;
+        padding: 4rem 3rem;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(31, 27, 71, 0.1);
+        border: 1px solid var(--border);
+        margin: 2rem 0;
+      }
+
+      .coming-soon-card h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        color: var(--accent);
+        margin: 0 0 1rem;
+      }
+
+      .coming-soon-card p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin: 1rem 0;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin: 3rem 0;
+      }
+
+      .feature-card {
+        background: var(--surface);
+        border-radius: 18px;
+        padding: 2rem;
+        border: 1px solid var(--border);
+        box-shadow: 0 10px 30px rgba(31, 27, 71, 0.08);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(31, 27, 71, 0.15);
+      }
+
+      .feature-card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        color: var(--accent);
+        margin: 0 0 1rem;
+      }
+
+      .feature-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .feature-card li {
+        padding: 0.5rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      .feature-card li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: var(--accent-strong);
+        font-weight: bold;
+      }
+
+      .cta-section {
+        margin-top: 3rem;
+        padding: 3rem;
+        background: linear-gradient(120deg, #b7595c, #1f1b47);
+        border-radius: 24px;
+        color: #fff;
+        text-align: center;
+      }
+
+      .cta-section h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        margin: 0 0 1rem;
+      }
+
+      .cta-section p {
+        margin: 1rem 0 2rem;
+        font-size: 1.1rem;
+        opacity: 0.95;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.85rem 1.8rem;
+        border-radius: 999px;
+        border: none;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+      }
+
+      .btn:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .btn.primary {
+        background: #f9e0d4;
+        color: #1f1b47;
+      }
+
+      .btn.primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(249, 224, 212, 0.4);
+      }
+
+      .btn.ghost {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        color: #fff;
+      }
+
+      .btn.ghost:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-3px);
+        border-color: #fff;
+      }
+
+      footer {
+        text-align: center;
+        padding: 3rem 0 2rem;
+        color: rgba(69, 60, 95, 0.6);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 0.75rem;
+        }
+
+        .coming-soon-card {
+          padding: 3rem 2rem;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .btn-group {
+          flex-direction: column;
+        }
+
+        .btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header" id="header">
+        <a href="Index.html" class="brand">Love Triad</a>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="YYn.htm">Fall House</a></li>
+            <li><a href="Index.html#houses">All Houses</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="forum-header animate-in">
+          <h1>Fall House Forum</h1>
+          <p class="subtitle">♂♀♂ • Young Yin • Two Men + One Woman</p>
+          <p>
+            A grounding space for those exploring intentional triadic relationships within the Fall House energy—
+            cultivating harvest, reflection, and fertile partnership.
+          </p>
+        </section>
+
+        <div class="coming-soon-card animate-in animate-delay-1">
+          <h2>🍂 Coming Soon</h2>
+          <p>
+            The Fall House Forum is currently under development. We're building a beautiful, 
+            secure space for meaningful connections, thoughtful discussions, and community building.
+          </p>
+          <p>
+            In the meantime, you can reach out directly to connect with others interested in 
+            Fall House triadic relationships.
+          </p>
+        </div>
+
+        <section class="features-grid">
+          <article class="feature-card animate-in animate-delay-2">
+            <h3>Planned Features</h3>
+            <ul>
+              <li>Member profiles & matching</li>
+              <li>Private messaging system</li>
+              <li>Discussion boards & topics</li>
+              <li>Event calendar & meetups</li>
+              <li>Resource library</li>
+              <li>Guided relationship exercises</li>
+            </ul>
+          </article>
+
+          <article class="feature-card animate-in animate-delay-3">
+            <h3>Community Guidelines</h3>
+            <ul>
+              <li>Respect & consent first</li>
+              <li>Authentic communication</li>
+              <li>Privacy & confidentiality</li>
+              <li>Inclusive & welcoming space</li>
+              <li>Support & accountability</li>
+              <li>Growth-oriented mindset</li>
+            </ul>
+          </article>
+
+          <article class="feature-card animate-in animate-delay-3">
+            <h3>Get Notified</h3>
+            <p style="margin: 1rem 0;">
+              Be the first to know when the Fall House Forum launches. 
+              Email us to join the waitlist and receive updates about community events.
+            </p>
+          </article>
+        </section>
+
+        <section class="cta-section animate-in">
+          <h2>Ready to Connect?</h2>
+          <p>Reach out now to express your interest in Fall House and join our growing community.</p>
+          <div class="btn-group">
+            <a href="mailto:info@lovetriad.org?subject=Fall%20House%20Forum%20Interest" class="btn primary">
+              Contact Us
+            </a>
+            <a href="YYn.htm" class="btn ghost">Back to Fall House</a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>Love Triad · Celebrating intentional complex relationships since the mysteries of three.</p>
+        <p>© LoveTriad.org</p>
+      </footer>
+    </div>
+
+    <script>
+      const header = document.getElementById('header');
+      
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+      
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.animate-in').forEach(el => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
