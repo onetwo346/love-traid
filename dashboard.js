@@ -10,7 +10,7 @@ window.handleLogout = function() {
   console.log('Logout function called');
   localStorage.clear();
   sessionStorage.clear();
-  window.location.href = 'Index.html';
+  window.location.href = 'index.html';
 };
 
 // Load user data
@@ -63,7 +63,7 @@ function loadProfileData() {
 // Open modal and load data
 const originalOpenModal = window.openModal;
 window.openModal = function(modalId) {
-  if (modalId === 'edit-profile') {
+  if (modalId === 'edit-profile-modal') {
     loadProfileData();
   }
   originalOpenModal(modalId);

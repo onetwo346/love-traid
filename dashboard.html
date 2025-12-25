@@ -13,14 +13,14 @@
 <body>
   <div class="page">
     <header class="site-header" id="header">
-      <div class="brand" onclick="window.location.href='Index.html'">Love Triad</div>
+      <div class="brand" onclick="window.location.href='index.html'">Love Triad</div>
       <nav aria-label="Primary">
         <ul>
-          <li><a href="Index.html">Home</a></li>
-          <li><a href="Index.html#houses">Houses</a></li>
-          <li><a href="Index.html#forums">Forums</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#houses">Houses</a></li>
+          <li><a href="index.html#forums">Forums</a></li>
           <li><a href="dashboard.html" class="active">Dashboard</a></li>
-          <li><a href="javascript:void(0);" id="logout-btn" onclick="localStorage.clear(); sessionStorage.clear(); window.location.href='Index.html'; return false;">Logout</a></li>
+          <li><a href="javascript:void(0);" id="logout-btn" onclick="localStorage.clear(); sessionStorage.clear(); window.location.href='index.html'; return false;">Logout</a></li>
         </ul>
       </nav>
     </header>
@@ -32,8 +32,8 @@
           <p>Your journey with <span id="user-house">Spring House</span> continues</p>
         </div>
         <div class="dashboard-nav">
-          <button class="btn ghost" onclick="window.location.href='Index.html#forums'">Visit Forums</button>
-          <button class="btn primary" onclick="openModal('edit-profile')">Edit Profile</button>
+          <button class="btn ghost" onclick="window.location.href='index.html#forums'">Visit Forums</button>
+          <button class="btn primary" onclick="openModal('edit-profile-modal')">Edit Profile</button>
         </div>
       </div>
 
@@ -65,16 +65,16 @@
           <div class="quick-actions">
             <h4>Quick Actions</h4>
             <div class="action-list">
-              <button class="action-btn" onclick="window.location.href='Index.html#forums'">
+              <button class="action-btn" onclick="window.location.href='index.html#forums'">
                 💬 Browse Forums
               </button>
-              <button class="action-btn" onclick="openModal('new-topic')">
+              <button class="action-btn" onclick="openModal('new-topic-modal')">
                 ✍️ Create New Topic
               </button>
-              <button class="action-btn" onclick="openModal('edit-profile')">
+              <button class="action-btn" onclick="openModal('edit-profile-modal')">
                 👤 Edit Profile
               </button>
-              <button class="action-btn" onclick="window.location.href='Index.html#houses'">
+              <button class="action-btn" onclick="window.location.href='index.html#houses'">
                 🏠 Explore Houses
               </button>
             </div>
@@ -229,6 +229,7 @@
   </div>
 
   <script src="script.js?v=10"></script>
+  <script src="community-functions.js?v=10"></script>
   <script src="dashboard.js?v=10"></script>
 </body>
 </html>
