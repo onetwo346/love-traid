@@ -2,7 +2,8 @@ const header = document.getElementById('header');
 const scrollToTopBtn = document.getElementById('scrollToTop');
 
 // Check if user is logged in and update nav
-const user = JSON.parse(localStorage.getItem('lovetriad_user'));
+window.user = JSON.parse(localStorage.getItem('lovetriad_user'));
+const user = window.user;
 const authNavItem = document.getElementById('auth-nav-item');
 
 if (user && authNavItem) {

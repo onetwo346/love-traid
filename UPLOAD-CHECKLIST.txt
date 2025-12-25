@@ -1,0 +1,48 @@
+GITHUB UPLOAD CHECKLIST - Upload ALL these files to your repository root:
+
+✅ MAIN PAGE:
+   - Index.html (82KB - with Community Hub)
+
+✅ CSS FILES (REQUIRED):
+   - styles.css (36KB)
+   - community-premium.css (31KB)
+   - auth-styles.css (8KB)
+
+✅ JAVASCRIPT FILES (REQUIRED):
+   - script.js (7KB)
+   - community-functions.js (15KB)
+   - community-live-updates.js (11KB)
+   - auth.js (2KB)
+   - dashboard.js (4KB)
+
+✅ OTHER HTML PAGES:
+   - auth.html
+   - dashboard.html
+   - topic-view.html
+   - ForumOYg.html
+   - ForumOYn.html
+   - ForumYYg.html
+   - ForumYYn.html
+
+✅ IMAGES:
+   - LTlogo5trans.png
+   - OYg.jpg
+   - OYn.jpg
+   - YYg.jpg
+   - YYn.jpg
+   - creme4bg.gif
+   - rainbar.gif
+
+IMPORTANT NOTES:
+1. Upload ALL files to the ROOT of your repository (no folders)
+2. Make sure Index.html has capital "I" (GitHub is case-sensitive)
+3. After uploading, do a hard refresh: Ctrl + Shift + R
+4. Cache version is now v=10 to force browser refresh
+
+DO NOT UPLOAD:
+   - Index-backup.html
+   - Index-old-backup.html
+   - Index-restore.html
+   - Index-temp-backup.html
+   - HumanMolecule.htm
+   - OYg.htm, OYn.htm, YYg.htm, YYn.htm
