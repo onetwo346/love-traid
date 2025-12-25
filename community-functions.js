@@ -66,7 +66,9 @@ window.joinLiveSession = function(sessionId) {
   
   const modal = document.createElement('div');
   modal.className = 'video-modal fullscreen';
+  modal.id = 'live-session-modal';
   modal.innerHTML = `
+    <button class="modal-close-x" onclick="document.getElementById('live-session-modal').remove()" style="position: fixed; top: 20px; right: 380px; width: 50px; height: 50px; border-radius: 50%; background: #dc3545; color: white; border: none; font-size: 2rem; cursor: pointer; z-index: 10001; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">×</button>
     <div class="video-room">
       <div class="video-header">
         <div class="session-title">
@@ -77,7 +79,7 @@ window.joinLiveSession = function(sessionId) {
           <button class="control-btn" onclick="toggleMic()">🎤</button>
           <button class="control-btn" onclick="toggleCamera()">📹</button>
           <button class="control-btn" onclick="shareScreen()">🖥️</button>
-          <button class="control-btn danger" onclick="this.closest('.video-modal').remove()">📞 Leave</button>
+          <button class="control-btn leave-btn" onclick="document.getElementById('live-session-modal').remove()" style="background: #dc3545; color: white; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 8px; font-size: 1rem;">📞 Leave Session</button>
         </div>
       </div>
       
@@ -109,9 +111,9 @@ window.joinLiveSession = function(sessionId) {
       </div>
       
       <div class="video-chat">
-        <div class="chat-header">
-          <h4>Live Chat</h4>
-          <span class="viewer-count">👁️ 12 watching</span>
+        <div class="chat-header" style="padding: 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: space-between; align-items: center; color: #fff;">
+          <h4 style="margin: 0; font-size: 1rem;">Live Chat</h4>
+          <span class="viewer-count" style="font-size: 0.85rem; opacity: 0.8;">👁️ 12 watching</span>
         </div>
         <div class="chat-messages" id="live-chat-messages">
           <div class="chat-msg">

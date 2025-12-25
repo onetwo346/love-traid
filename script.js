@@ -8,21 +8,8 @@ const authNavItem = document.getElementById('auth-nav-item');
 if (user && authNavItem) {
   authNavItem.innerHTML = `
     <a href="dashboard.html" class="btn primary" style="padding: 0.5rem 1.25rem; font-size: 0.9rem; margin-right: 0.5rem;">Dashboard</a>
-    <a href="#" id="logout-btn" class="btn secondary" style="padding: 0.5rem 1.25rem; font-size: 0.9rem;">Logout</a>
+    <a href="javascript:void(0);" id="logout-btn" style="padding: 0.5rem 1.25rem; font-size: 0.9rem; color: var(--accent-strong); font-weight: 600; text-decoration: none; border: 2px solid var(--accent-strong); border-radius: 8px; transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.background='var(--accent-strong)'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='var(--accent-strong)';" onclick="localStorage.clear(); sessionStorage.clear(); window.location.href='Index.html'; return false;">Logout</a>
   `;
-  
-  // Add logout functionality
-  setTimeout(() => {
-    const logoutBtn = document.getElementById('logout-btn');
-    if (logoutBtn) {
-      logoutBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        localStorage.removeItem('lovetriad_user');
-        localStorage.removeItem('lovetriad_remember');
-        window.location.href = 'Index.html';
-      });
-    }
-  }, 100);
 }
 
 // Toggle Community Hub content based on login state

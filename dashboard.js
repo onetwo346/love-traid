@@ -5,6 +5,14 @@ if (!user) {
   window.location.href = 'auth.html';
 }
 
+// Global logout function
+window.handleLogout = function() {
+  console.log('Logout function called');
+  localStorage.clear();
+  sessionStorage.clear();
+  window.location.href = 'Index.html';
+};
+
 // Load user data
 document.getElementById('user-name').textContent = user.name;
 document.getElementById('profile-name').textContent = user.name;
@@ -26,19 +34,6 @@ document.getElementById('join-date').textContent = joinDate.toLocaleDateString('
 document.getElementById('stat-posts').textContent = user.posts || 0;
 document.getElementById('stat-replies').textContent = user.replies || 0;
 document.getElementById('stat-likes').textContent = user.likes || 0;
-
-// Logout
-const logoutBtn = document.getElementById('logout-btn');
-if (logoutBtn) {
-  logoutBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    localStorage.removeItem('lovetriad_user');
-    localStorage.removeItem('lovetriad_remember');
-    window.location.href = 'Index.html';
-  });
-} else {
-  console.error('Logout button not found');
-}
 
 // Edit Profile
 document.getElementById('edit-profile-form').addEventListener('submit', (e) => {
