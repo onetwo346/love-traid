@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=9" />
     <link rel="stylesheet" href="community-premium.css?v=8" />
   </head>
   <body>
@@ -58,7 +58,7 @@
             </p>
           </div>
           <div class="hero-visual animate-in animate-delay-2">
-            <img src="LTlogo5trans.png" alt="Love Triad emblem" />
+            <img src="LTlogo5trans.png" alt="Love Triad emblem" class="logo-animated" />
             <small>Founder's Archive • Since 1989</small>
           </div>
         </section>
@@ -69,26 +69,32 @@
             <p>Ancient symbolism meets contemporary courage.</p>
           </div>
           <div class="features-grid">
-            <article class="feature-card animate-in animate-delay-1">
+            <article class="feature-card-enhanced animate-in animate-delay-1" onclick="document.getElementById('houses').scrollIntoView({behavior: 'smooth'});">
+              <div class="feature-icon">✨</div>
               <h3>Three is Magic</h3>
               <p>
                 The number three opens space for transformation. Love Triad honors that unfolding by naming it,
                 celebrating it, and inviting you into a structure where creativity and stability cohabit.
               </p>
+              <div class="feature-accent"></div>
             </article>
-            <article class="feature-card animate-in animate-delay-2">
+            <article class="feature-card-enhanced animate-in animate-delay-2" onclick="document.getElementById('houses').scrollIntoView({behavior: 'smooth'});">
+              <div class="feature-icon">🏛️</div>
               <h3>Architected Houses</h3>
               <p>
-                Each house—Spring, Summer, Fall, Winter—focuses a particular balance of energy fields, genders, and
+                Each house (Spring, Summer, Fall, Winter) focuses a particular balance of energy fields, genders, and
                 duration. Choose the story that feels like yours.
               </p>
+              <div class="feature-accent"></div>
             </article>
-            <article class="feature-card animate-in animate-delay-3">
+            <article class="feature-card-enhanced animate-in animate-delay-3" onclick="document.getElementById('forums').scrollIntoView({behavior: 'smooth'});">
+              <div class="feature-icon">💬</div>
               <h3>Profiles &amp; Forums</h3>
               <p>
                 Create, update, and search profiles with clarity. Discuss weekly themes and plan intentional
                 gatherings in the house-specific forums.
               </p>
+              <div class="feature-accent"></div>
             </article>
           </div>
         </section>
@@ -669,25 +675,37 @@
             <p>Four seasonal gateways into the triadic arc.</p>
           </div>
           <div class="house-grid">
-            <article class="house-card">
-              <h3>Spring House • Young Yang</h3>
+            <article class="house-card-enhanced">
+              <div class="house-icon">🌸</div>
+              <h3>Spring House</h3>
+              <div class="house-subtitle">Young Yang</div>
               <p>Two women + one man. Rhythms of beginning, intention, and blossoming warmth.</p>
-              <button onclick="openModal('spring-house')">Enter Spring House</button>
+              <button class="house-btn" onclick="openModal('spring-house')">Enter Spring House →</button>
+              <div class="house-accent"></div>
             </article>
-            <article class="house-card">
-              <h3>Summer House • Old Yang</h3>
+            <article class="house-card-enhanced">
+              <div class="house-icon">🔥</div>
+              <h3>Summer House</h3>
+              <div class="house-subtitle">Old Yang</div>
               <p>Three men honoring boldness and protective care, living in a shared intentional lot.</p>
-              <button onclick="openModal('summer-house')">Enter Summer House</button>
+              <button class="house-btn" onclick="openModal('summer-house')">Enter Summer House →</button>
+              <div class="house-accent"></div>
             </article>
-            <article class="house-card">
-              <h3>Fall House • Young Yin</h3>
+            <article class="house-card-enhanced">
+              <div class="house-icon">🍂</div>
+              <h3>Fall House</h3>
+              <div class="house-subtitle">Young Yin</div>
               <p>Two men + one woman conjuring harvests, reflection, and fertile partnership.</p>
-              <button onclick="openModal('fall-house')">Enter Fall House</button>
+              <button class="house-btn" onclick="openModal('fall-house')">Enter Fall House →</button>
+              <div class="house-accent"></div>
             </article>
-            <article class="house-card">
-              <h3>Winter House • Old Yin</h3>
+            <article class="house-card-enhanced">
+              <div class="house-icon">❄️</div>
+              <h3>Winter House</h3>
+              <div class="house-subtitle">Old Yin</div>
               <p>Three women seeking enduring stability and contemplative warmth in community.</p>
-              <button onclick="openModal('winter-house')">Enter Winter House</button>
+              <button class="house-btn" onclick="openModal('winter-house')">Enter Winter House →</button>
+              <div class="house-accent"></div>
             </article>
           </div>
         </section>
@@ -966,25 +984,33 @@
             <p>Connect, discuss, and build community within your house.</p>
           </div>
           <div class="house-grid">
-            <article class="house-card">
+            <article class="house-card-enhanced">
+              <div class="house-icon">🌸</div>
               <h3>Spring House Forum</h3>
               <p>Join the conversation with other Spring House members. Share experiences, coordinate gatherings, and deepen your triad practice.</p>
-              <button onclick="openModal('spring-forum')">Visit Forum</button>
+              <button class="house-btn" onclick="openModal('spring-forum')">Visit Forum →</button>
+              <div class="house-accent"></div>
             </article>
-            <article class="house-card">
+            <article class="house-card-enhanced">
+              <div class="house-icon">🔥</div>
               <h3>Summer House Forum</h3>
               <p>Connect with Summer House brothers. Discuss protective care practices, brotherhood rituals, and intentional living.</p>
-              <button onclick="openModal('summer-forum')">Visit Forum</button>
+              <button class="house-btn" onclick="openModal('summer-forum')">Visit Forum →</button>
+              <div class="house-accent"></div>
             </article>
-            <article class="house-card">
+            <article class="house-card-enhanced">
+              <div class="house-icon">🍂</div>
               <h3>Fall House Forum</h3>
               <p>Engage with Fall House members on harvest practices, reflection techniques, and cultivating fertile partnerships.</p>
-              <button onclick="openModal('fall-forum')">Visit Forum</button>
+              <button class="house-btn" onclick="openModal('fall-forum')">Visit Forum →</button>
+              <div class="house-accent"></div>
             </article>
-            <article class="house-card">
+            <article class="house-card-enhanced">
+              <div class="house-icon">❄️</div>
               <h3>Winter House Forum</h3>
               <p>Share with Winter House sisters about contemplative practices, steady rituals, and sacred listening circles.</p>
-              <button onclick="openModal('winter-forum')">Visit Forum</button>
+              <button class="house-btn" onclick="openModal('winter-forum')">Visit Forum →</button>
+              <div class="house-accent"></div>
             </article>
           </div>
         </section>
@@ -1546,26 +1572,32 @@
             <p>Selected articles from the founder, archived texts, and the Human Molecule.</p>
           </div>
           <div class="stories-grid">
-            <div class="article-card">
-              <strong>The Human Molecule</strong>
-              <p>Roland Stahl explores binary, solitary, and triad formations—read the seminal framing of this work.</p>
-              <a href="#human-molecule" onclick="event.preventDefault(); openModal('human-molecule');">
-                Dive into the full chapter
+            <div class="article-card-enhanced">
+              <div class="article-icon">🧬</div>
+              <h3>The Human Molecule</h3>
+              <p>Roland Stahl explores binary, solitary, and triad formations (read the seminal framing of this work).</p>
+              <a href="#human-molecule" class="article-link" onclick="event.preventDefault(); openModal('human-molecule');">
+                Dive into the Full Chapter →
               </a>
+              <div class="article-accent"></div>
             </div>
-            <div class="article-card">
-              <strong>Selected Articles: Metaphysics &amp; Theology</strong>
+            <div class="article-card-enhanced">
+              <div class="article-icon">📜</div>
+              <h3>Selected Articles: Metaphysics &amp; Theology</h3>
               <p>Explore the PDF anthology curated from 1989 to 2022.</p>
-              <a href="https://www.tree.org/Selected Articles.pdf" target="_blank" rel="noopener noreferrer">
-                Open Selected Articles
+              <a href="https://www.tree.org/Selected Articles.pdf" class="article-link" target="_blank" rel="noopener noreferrer">
+                Open Selected Articles →
               </a>
+              <div class="article-accent"></div>
             </div>
-            <div class="article-card">
-              <strong>One Planet Makeover</strong>
+            <div class="article-card-enhanced">
+              <div class="article-icon">🌍</div>
+              <h3>One Planet Makeover</h3>
               <p>A manifesto of planetary healing through intentional family structures.</p>
-              <a href="https://www.tree.org/One Planet Makeover.pdf" target="_blank" rel="noopener noreferrer">
-                Open One Planet Makeover
+              <a href="https://www.tree.org/One Planet Makeover.pdf" class="article-link" target="_blank" rel="noopener noreferrer">
+                Open One Planet Makeover →
               </a>
+              <div class="article-accent"></div>
             </div>
           </div>
         </section>

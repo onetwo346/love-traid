@@ -28,12 +28,17 @@ document.getElementById('stat-replies').textContent = user.replies || 0;
 document.getElementById('stat-likes').textContent = user.likes || 0;
 
 // Logout
-document.getElementById('logout-btn').addEventListener('click', (e) => {
-  e.preventDefault();
-  localStorage.removeItem('lovetriad_user');
-  localStorage.removeItem('lovetriad_remember');
-  window.location.href = 'Index.html';
-});
+const logoutBtn = document.getElementById('logout-btn');
+if (logoutBtn) {
+  logoutBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.removeItem('lovetriad_user');
+    localStorage.removeItem('lovetriad_remember');
+    window.location.href = 'Index.html';
+  });
+} else {
+  console.error('Logout button not found');
+}
 
 // Edit Profile
 document.getElementById('edit-profile-form').addEventListener('submit', (e) => {

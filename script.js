@@ -6,7 +6,23 @@ const user = JSON.parse(localStorage.getItem('lovetriad_user'));
 const authNavItem = document.getElementById('auth-nav-item');
 
 if (user && authNavItem) {
-  authNavItem.innerHTML = '<a href="dashboard.html" class="btn primary" style="padding: 0.5rem 1.25rem; font-size: 0.9rem;">Dashboard</a>';
+  authNavItem.innerHTML = `
+    <a href="dashboard.html" class="btn primary" style="padding: 0.5rem 1.25rem; font-size: 0.9rem; margin-right: 0.5rem;">Dashboard</a>
+    <a href="#" id="logout-btn" class="btn secondary" style="padding: 0.5rem 1.25rem; font-size: 0.9rem;">Logout</a>
+  `;
+  
+  // Add logout functionality
+  setTimeout(() => {
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        localStorage.removeItem('lovetriad_user');
+        localStorage.removeItem('lovetriad_remember');
+        window.location.href = 'Index.html';
+      });
+    }
+  }, 100);
 }
 
 // Toggle Community Hub content based on login state
