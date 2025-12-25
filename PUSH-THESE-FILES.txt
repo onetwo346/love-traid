@@ -1,0 +1,27 @@
+MISSING FILES ON GITHUB - YOU NEED TO PUSH THESE:
+
+CSS FILES (CRITICAL):
+- community-premium.css
+- auth-styles.css
+
+JAVASCRIPT FILES (CRITICAL):
+- community-functions.js
+- community-live-updates.js
+- dashboard.js
+- auth.js
+
+HTML FILES:
+- dashboard.html
+- auth.html
+- topic-view.html
+
+UPDATED FILE:
+- script.js (I updated this with the window.user fix)
+
+HOW TO PUSH:
+1. git add community-premium.css auth-styles.css community-functions.js community-live-updates.js dashboard.js auth.js dashboard.html auth.html topic-view.html script.js
+2. git commit -m "Add community hub CSS and JS files"
+3. git push
+
+The Index.html is already on GitHub but it's trying to load files that aren't there.
+That's why you see unstyled content - the CSS files are missing from the repo.

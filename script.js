@@ -197,12 +197,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 function openModal(modalId) {
-  const modal = document.getElementById(modalId + '-modal');
+  // Handle both formats: 'spring-house' and 'spring-house-modal'
+  let modal = document.getElementById(modalId);
+  if (!modal) {
+    modal = document.getElementById(modalId + '-modal');
+  }
   if (modal) {
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 }
+
+window.openModal = openModal;
 
 function closeModal(modalId) {
   const modal = document.getElementById(modalId);
@@ -211,6 +217,8 @@ function closeModal(modalId) {
     document.body.style.overflow = '';
   }
 }
+
+window.closeModal = closeModal;
 
 window.addEventListener('click', (e) => {
   if (e.target.classList.contains('modal')) {
