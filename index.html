@@ -8,12 +8,6 @@
     />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Love Triad | Intentional Complex Relationships</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css?v=9" />
     <link rel="stylesheet" href="community-premium.css?v=8" />
   </head>
@@ -59,7 +53,9 @@
           </div>
           <div class="hero-visual animate-in animate-delay-2">
             <img src="LTlogo5trans.png" alt="Love Triad emblem" class="logo-animated" />
-            <small>Founder's Archive • Since 1989</small>
+            <h3 style="margin: 1rem 0 0.5rem; font-size: 1.5rem; position: relative; z-index: 1; color: #1f1b47;">Founder's Page</h3>
+            <a href="HumanMolecule.htm" style="display: inline-block; margin: 0.75rem 0; padding: 0.75rem 1.5rem; background: url('creme4bg.gif'), #f9e0d4; background-blend-mode: overlay; color: #1f1b47; border-radius: 999px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; position: relative; z-index: 1; font-family: Garamond, 'Times New Roman', serif; box-shadow: 0 4px 12px rgba(249, 224, 212, 0.4);">Go to Founder's Page →</a>
+            <small style="color: #453c5f;">Founder's Archive • Since 1989</small>
           </div>
         </section>
 
@@ -671,7 +667,7 @@
 
         <section id="houses">
           <div class="section-header">
-            <h2>Explore the Houses</h2>
+            <h2><span style="background: #f5f0e8; padding: 0.3rem 0.8rem; border-radius: 8px; font-family: 'Century Schoolbook', Georgia, serif; font-weight: bold; margin-right: 0.5rem;">♂♀</span>Explore the Houses</h2>
             <p>Four seasonal gateways into the triadic arc.</p>
           </div>
           <div class="house-grid">
@@ -707,6 +703,19 @@
               <button class="house-btn" onclick="openModal('winter-house')">Enter Winter House →</button>
               <div class="house-accent"></div>
             </article>
+          </div>
+          
+          <!-- Destination Links -->
+          <div style="margin-top: 3rem; text-align: center;">
+            <h3 style="font-family: Garamond, 'Times New Roman', serif; font-size: 1.8rem; color: var(--accent); margin-bottom: 1.5rem;">Navigate to Your House</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; max-width: 800px; margin: 0 auto;">
+              <a href="#" onclick="event.preventDefault(); openModal('spring-house');" style="flex: 1 1 200px; padding: 1rem 1.5rem; background: linear-gradient(135deg, rgba(183, 89, 92, 0.1), rgba(31, 27, 71, 0.05)); border: 2px solid var(--accent-strong); border-radius: 12px; color: var(--accent); font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-family: Garamond, 'Times New Roman', serif; font-size: 1.1rem;">🌸 Spring House</a>
+              <a href="#" onclick="event.preventDefault(); openModal('summer-house');" style="flex: 1 1 200px; padding: 1rem 1.5rem; background: linear-gradient(135deg, rgba(183, 89, 92, 0.1), rgba(31, 27, 71, 0.05)); border: 2px solid var(--accent-strong); border-radius: 12px; color: var(--accent); font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-family: Garamond, 'Times New Roman', serif; font-size: 1.1rem;">🔥 Summer House</a>
+              <a href="#" onclick="event.preventDefault(); openModal('fall-house');" style="flex: 1 1 200px; padding: 1rem 1.5rem; background: linear-gradient(135deg, rgba(183, 89, 92, 0.1), rgba(31, 27, 71, 0.05)); border: 2px solid var(--accent-strong); border-radius: 12px; color: var(--accent); font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-family: Garamond, 'Times New Roman', serif; font-size: 1.1rem;">🍂 Fall House</a>
+              <a href="#" onclick="event.preventDefault(); openModal('winter-house');" style="flex: 1 1 200px; padding: 1rem 1.5rem; background: linear-gradient(135deg, rgba(183, 89, 92, 0.1), rgba(31, 27, 71, 0.05)); border: 2px solid var(--accent-strong); border-radius: 12px; color: var(--accent); font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-family: Garamond, 'Times New Roman', serif; font-size: 1.1rem;">❄️ Winter House</a>
+              <a href="auth.html" style="flex: 1 1 200px; padding: 1rem 1.5rem; background: linear-gradient(135deg, rgba(183, 89, 92, 0.1), rgba(31, 27, 71, 0.05)); border: 2px solid var(--accent-strong); border-radius: 12px; color: var(--accent); font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-family: Garamond, 'Times New Roman', serif; font-size: 1.1rem;">👤 Profiles</a>
+              <a href="#forums" style="flex: 1 1 200px; padding: 1rem 1.5rem; background: linear-gradient(135deg, rgba(183, 89, 92, 0.1), rgba(31, 27, 71, 0.05)); border: 2px solid var(--accent-strong); border-radius: 12px; color: var(--accent); font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-family: Garamond, 'Times New Roman', serif; font-size: 1.1rem;">💬 Forums</a>
+            </div>
           </div>
         </section>
 
@@ -980,7 +989,7 @@
 
         <section id="forums">
           <div class="section-header">
-            <h2>House Forums</h2>
+            <h2><span style="background: #f5f0e8; padding: 0.3rem 0.8rem; border-radius: 8px; font-family: 'Century Schoolbook', Georgia, serif; font-weight: bold; margin-right: 0.5rem;">♂♀</span>House Forums</h2>
             <p>Connect, discuss, and build community within your house.</p>
           </div>
           <div class="house-grid">
@@ -1569,20 +1578,15 @@
         <section id="stories">
           <div class="section-header">
             <h2>Stories &amp; Lore</h2>
-            <p>Selected articles from the founder, archived texts, and the Human Molecule.</p>
+            <p>Selected articles from the founder, archived texts, and philosophical works.</p>
           </div>
           <div class="stories-grid">
             <div class="article-card-enhanced">
-              <div class="article-icon">🧬</div>
-              <h3>The Human Molecule</h3>
-              <p>Roland Stahl explores binary, solitary, and triad formations (read the seminal framing of this work).</p>
-              <a href="#human-molecule" class="article-link" onclick="event.preventDefault(); openModal('human-molecule');">
-                Dive into the Full Chapter →
-              </a>
-              <div class="article-accent"></div>
-            </div>
-            <div class="article-card-enhanced">
-              <div class="article-icon">📜</div>
+              <div class="article-icon">
+                <div class="book-cover-frame">
+                  <img src="Screenshot 2025-12-28 083607.png" alt="Selected Articles Cover">
+                </div>
+              </div>
               <h3>Selected Articles: Metaphysics &amp; Theology</h3>
               <p>Explore the PDF anthology curated from 1989 to 2022.</p>
               <a href="https://www.tree.org/Selected Articles.pdf" class="article-link" target="_blank" rel="noopener noreferrer">
@@ -1591,7 +1595,11 @@
               <div class="article-accent"></div>
             </div>
             <div class="article-card-enhanced">
-              <div class="article-icon">🌍</div>
+              <div class="article-icon">
+                <div class="book-cover-frame">
+                  <img src="Screenshot 2025-12-28 083532.png" alt="One Planet Makeover Cover">
+                </div>
+              </div>
               <h3>One Planet Makeover</h3>
               <p>A manifesto of planetary healing through intentional family structures.</p>
               <a href="https://www.tree.org/One Planet Makeover.pdf" class="article-link" target="_blank" rel="noopener noreferrer">
@@ -1600,6 +1608,40 @@
               <div class="article-accent"></div>
             </div>
           </div>
+        </section>
+
+        <!-- The Founder Section -->
+        <section style="margin: 5rem 0; padding: 4rem 2rem; background: url('creme4bg.gif'), linear-gradient(135deg, rgba(183, 89, 92, 0.12), rgba(31, 27, 71, 0.08)); background-blend-mode: overlay; border-radius: 32px; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(183, 89, 92, 0.15), transparent); border-radius: 50%; pointer-events: none;"></div>
+          <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(31, 27, 71, 0.1), transparent); border-radius: 50%; pointer-events: none;"></div>
+          
+          <div style="text-align: center; margin-bottom: 3rem; position: relative; z-index: 1;">
+            <h2 style="font-family: Garamond, 'Times New Roman', serif; font-size: 1.8rem; color: var(--accent); margin-bottom: 0.75rem; letter-spacing: 0.02em;">The Founder</h2>
+            <p style="font-size: 0.95rem; color: var(--muted); font-style: italic; max-width: 600px; margin: 0 auto;">Explore the foundational philosophy and seminal works of Roland Stahl</p>
+          </div>
+          
+          <a href="HumanMolecule.htm" style="text-decoration: none; display: block; max-width: 850px; margin: 0 auto; position: relative; z-index: 1;">
+            <div style="background: rgba(255, 255, 255, 0.95); border-radius: 24px; padding: 3rem 2.5rem; box-shadow: 0 20px 60px rgba(31, 27, 71, 0.15); border: 3px solid var(--accent-strong); cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden;">
+              <div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, var(--accent-strong), var(--accent), var(--accent-strong)); opacity: 0.8;"></div>
+              
+              <div style="text-align: center;">
+                <div style="display: inline-block; padding: 1.5rem; background: linear-gradient(135deg, rgba(183, 89, 92, 0.1), rgba(31, 27, 71, 0.05)); border-radius: 20px; margin-bottom: 1.5rem;">
+                  <div style="font-size: 4rem; line-height: 1;">🧬</div>
+                </div>
+                
+                <h3 style="font-family: Garamond, 'Times New Roman', serif; font-size: 1.6rem; margin-bottom: 1rem; color: var(--accent); font-weight: 700; letter-spacing: -0.02em;">The Human Molecule</h3>
+                
+                <p style="font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; font-style: italic; max-width: 650px; margin-left: auto; margin-right: auto;">Roland Stahl explores binary, solitary, and triad formations—read the seminal framing of this work</p>
+                
+                <div style="display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.5rem; background: url('creme4bg.gif'), linear-gradient(135deg, var(--accent-strong), var(--accent)); background-blend-mode: overlay; color: white; border-radius: 999px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 8px 24px rgba(183, 89, 92, 0.3); transition: all 0.3s ease; font-family: Garamond, 'Times New Roman', serif;">
+                  <span>Dive into the Full Chapter</span>
+                  <span style="font-size: 1.2rem;">→</span>
+                </div>
+              </div>
+              
+              <div style="position: absolute; bottom: -20px; right: -20px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(183, 89, 92, 0.08), transparent); border-radius: 50%; pointer-events: none;"></div>
+            </div>
+          </a>
         </section>
 
         <div class="cta-panel">
